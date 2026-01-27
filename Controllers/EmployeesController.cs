@@ -17,6 +17,7 @@ namespace TestWebAPI.Controllers
             _context = context;
         }
 
+
         // GET: api/employees
         [HttpGet]
         public IActionResult GetEmployees()
@@ -29,9 +30,9 @@ namespace TestWebAPI.Controllers
             return Ok(employees);
         }
 
-        // GET: api/employees/5
+        // GET: api/employees/id
         [HttpGet("{id}")]
-        public IActionResult GetEmployee(int id)
+        public IActionResult GetEmployeeId(int id)
         {
             var employee = _context.Employees
                 .Include(e => e.Department)
@@ -39,7 +40,7 @@ namespace TestWebAPI.Controllers
                 .FirstOrDefault(e => e.Id == id);
 
             if (employee == null)
-                return NotFound();
+                return NotFound("Employee Topilmadi! (NULL qaytdi)");
 
             return Ok(employee);
         }
@@ -54,31 +55,29 @@ namespace TestWebAPI.Controllers
             return Ok(employee);
         }
 
-        // PUT: api/employees/5
+        // PUT: api/employees/id
         [HttpPut("{id}")]
         public IActionResult UpdateEmployee(int id, Employee employee)
         {
             if (id != employee.Id)
-                return BadRequest("Id mos emas");
+                return BadRequest("Bunday Id dagi Employee topilmadi!");
 
             _context.Employees.Update(employee);
             _context.SaveChanges();
-
             return NoContent();
         }
 
-        // DELETE: api/employees/5
+        // DELETE: api/employees/id
         [HttpDelete("{id}")]
         public IActionResult DeleteEmployee(int id)
         {
             var employee = _context.Employees.Find(id);
 
             if (employee == null)
-                return NotFound();
+                return NotFound("Topilmadi! (NULL qaytdi)");
 
             _context.Employees.Remove(employee);
             _context.SaveChanges();
-
             return NoContent();
         }
     }

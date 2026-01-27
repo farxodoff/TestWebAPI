@@ -11,7 +11,8 @@ namespace TestWebAPI.Data
         {
         }
 
-        // Model table-lar
+
+        // PostgreSQL da jadval yaratadi
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Role> Roles { get; set; }

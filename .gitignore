@@ -426,3 +426,5 @@ FodyWeavers.xsd
 *.msm
 *.msp
 >>>>>>> e233c4b66761f78206bfd28dfeca7c735d31b06a
+/appsettings.Development.json
+/TestWebAPI.http

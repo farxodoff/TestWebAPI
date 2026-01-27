@@ -16,6 +16,7 @@ namespace TestWebAPI.Controllers
             _context = context;
         }
 
+
         // GET: api/departments
         [HttpGet]
         public IActionResult GetDepartments()

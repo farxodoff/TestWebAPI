@@ -15,11 +15,14 @@ namespace TestWebAPI.Controllers
             _context = context;
         }
 
+
+
         // GET: api/roles
         [HttpGet]
         public IActionResult GetRoles()
         {
             var roles = _context.Roles.ToList();
+
             return Ok(roles);
         }
 

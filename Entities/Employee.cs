@@ -6,10 +6,11 @@
         public string FullName { get; set; }
         public decimal Salary { get; set; }
 
-        // Foreign keys
+        // Foreign key Department
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
 
+        // Foreign key Role
         public int RoleId { get; set; }
         public Role Role { get; set; }
     }
