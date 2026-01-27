@@ -7,7 +7,7 @@ using TestWebAPI.Entities;
 namespace TestWebAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/employee")]
     public class EmployeesController : ControllerBase
     {
         private readonly AppDbContext _context;
