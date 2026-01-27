@@ -425,9 +425,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+# Visual Studio user-specific files
+*.csproj.user
 >>>>>>> e233c4b66761f78206bfd28dfeca7c735d31b06a
 /appsettings.Development.json
 /TestWebAPI.http
 /TestWebAPI.csproj
-# Visual Studio user-specific files
-*.csproj.user
+
