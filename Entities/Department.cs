@@ -6,6 +6,6 @@
         public string Name { get; set; }
 
         // Foreign key References
-        public ICollection<Employee> Employees { get; set; }
+        public List<Employee> Employees { get; set; }
     }
 }
