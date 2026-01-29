@@ -26,6 +26,20 @@ namespace TestWebAPI.Controllers
             return Ok(roles);
         }
 
+        // GET: api/roles/id
+        [HttpGet("{id}")]
+        public IActionResult GetByIdRole(int id)
+        {
+            var role = _context.Roles
+                .FirstOrDefault(e => e.Id == id);
+
+            if (role == null)
+                return NotFound("Employee Topilmadi! (NULL qaytdi)");
+
+            return Ok(role);
+        }
+
+
         // POST: api/roles
         [HttpPost]
         public IActionResult CreateRole(Role role)
