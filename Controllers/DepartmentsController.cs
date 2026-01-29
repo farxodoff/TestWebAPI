@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TestWebAPI.Data;
 using TestWebAPI.Entities;
 
@@ -23,6 +24,18 @@ namespace TestWebAPI.Controllers
         {
             var departments = _context.Departments.ToList();
             return Ok(departments);
+        }
+        // GET: api/departments/id
+        [HttpGet("{id}")]
+        public IActionResult GetByIdDepartment(int id)
+        {
+            var department = _context.Departments
+                .FirstOrDefault(e => e.Id == id);
+
+            if (department == null)
+                return NotFound("Employee Topilmadi! (NULL qaytdi)");
+
+            return Ok(department);
         }
 
         // POST: api/departments
